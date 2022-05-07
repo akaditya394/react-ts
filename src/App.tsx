@@ -14,8 +14,8 @@ function App() {
   };
   return (
     <React.Fragment>
-      <Todos items={todos} />
       <NewTodo onAddTodo={addTodoHandler} />
+      <Todos items={todos} />
     </React.Fragment>
   );
 }
