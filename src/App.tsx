@@ -5,6 +5,7 @@ import NewTodo from "./components/NewTodo";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
+
   const addTodoHandler = (todoText: string) => {
     const newTodo = new Todo(todoText);
 
@@ -12,10 +13,17 @@ function App() {
       return prevTodos.concat(newTodo);
     });
   };
+
+  const removeTodoHandler = (todoId: string) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter((todo) => todo.id !== todoId);
+    });
+  };
+
   return (
     <React.Fragment>
       <NewTodo onAddTodo={addTodoHandler} />
-      <Todos items={todos} />
+      <Todos onRemoveTodo={removeTodoHandler} items={todos} />
     </React.Fragment>
   );
 }
