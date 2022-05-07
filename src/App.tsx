@@ -1,9 +1,9 @@
-import Todos from "./component/Todos";
+import Todos from "./components/Todos";
+import Todo from "./models/todos";
 
 function App() {
-  return (
-    <Todos items={["Learn React", "Learn typescript"]} />
-  )
+  const todos = [new Todo("Learn React"), new Todo("Learn TypeScript")];
+  return <Todos items={todos} />;
 }
 
-export default App
+export default App;
