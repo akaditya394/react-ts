@@ -1,8 +1,8 @@
-import React from 'react'
+import Todos from "./component/Todos";
 
 function App() {
   return (
-    <div>App</div>
+    <Todos items={["Learn React", "Learn typescript"]} />
   )
 }
 
